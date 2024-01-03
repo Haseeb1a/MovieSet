@@ -7,9 +7,17 @@ class HomepageController extends ChangeNotifier {
   late PageController pagecontrller;
   int curnetIntex = 0;
   double pagevalue = 0.0;
+  List aaa = [];
+
+  List<void> reverse() {
+    aaa = movies.reversed.toList();
+    notifyListeners();
+    return aaa;
+  }
 
   HomepageController() {
     setingMapToModel();
+    reverse();
   }
 
   setingMapToModel() {

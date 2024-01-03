@@ -1,6 +1,6 @@
 List<Map<String, dynamic>> dataList = [{
 
-  "title":"good Boys",
+  "title":"Good Boys",
   "image":"assets/good_boys.jpg",
   "index":1,
   
@@ -11,7 +11,7 @@ List<Map<String, dynamic>> dataList = [{
 }
 ,{
   "title":"Batman",
-  "image":"assets/batman.jpeg",
+  "image":"assets/bataman2.jpg",
   "index":3,
 }
 ,{
