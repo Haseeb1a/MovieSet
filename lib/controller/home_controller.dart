@@ -26,6 +26,8 @@ class HomepageController extends ChangeNotifier {
               title: data['title'],
               image: data['image'],
               index: data['index'],
+              rating:data['rating'],
+              decription: data['decription']
             ))
         .toList();
 

@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:movieset/view/details_page/details_page.dart';
 
 class MovieButtion extends StatelessWidget {
-  const MovieButtion({super.key});
+  String text;
+//  final int index;
+  MovieButtion({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       margin: EdgeInsets.symmetric(horizontal: 62.0),
       padding: EdgeInsets.symmetric(vertical: 18.0),
-      decoration: BoxDecoration(color: Colors.black,borderRadius: BorderRadius.circular(18)),
+      decoration: BoxDecoration(
+          color: Colors.black, borderRadius: BorderRadius.circular(18)),
       alignment: Alignment.center,
-      child: Text('VIEW',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white),),
-
-
-
+      child: Text(
+        text,
+        style: TextStyle(
+            fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
     );
   }
 }
