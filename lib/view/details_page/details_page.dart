@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movieset/controller/details_controller.dart';
 import 'package:movieset/model/movie_model.dart';
 import 'package:movieset/view/Ticket_page/ticket_page.dart';
 import 'package:movieset/view/home_page.dart';
 import 'package:movieset/widgets/movie_button.dart';
 import 'package:movieset/widgets/trasperent_icons.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:provider/provider.dart';
 
 class DetailsPage extends StatefulWidget {
   final Movies movies;
@@ -22,14 +24,18 @@ class _DetailsPageState extends State<DetailsPage>
 
   @override
   void initState() {
+    // final alinprovider = Provider.of<DatailsController>(context,listen: false);
     // TODO: implement initState
-
+    //  Future
+    //  Future.delayed(Duration(seconds: 1))
     _controller =
         AnimationController(vsync: this, duration: Duration(seconds: 1));
     super.initState();
   }
 
   Widget build(BuildContext context) {
+    final alinprovider = Provider.of<DatailsController>(context);
+     Provider.of<DatailsController>(context).opacitychange();
     Size screenSize = MediaQuery.of(context).size;
     //  late  AnimationController controller;
     return Scaffold(
@@ -88,6 +94,7 @@ class _DetailsPageState extends State<DetailsPage>
                 child: GestureDetector(
                     onTap: () {
                       Navigator.pop(context);
+                      alinprovider.opacity = 0.1;
                       // MaterialPageRoute(builder: (context) => HomePage()));
                     },
                     child: const trasparent_Button(
@@ -104,6 +111,35 @@ class _DetailsPageState extends State<DetailsPage>
                 Text(widget.movies.title,
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 27)),
+                Column(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        alinprovider.chnager();
+                      },
+                      child: AnimatedCrossFade(
+                        secondChild: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Icon(
+                            Icons.favorite,
+                            color: Colors.black,
+                            size: 32,
+                          ),
+                        ),
+                        firstChild: Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                          size: 37,
+                        ),
+                        crossFadeState: alinprovider.selected
+                            ? CrossFadeState.showFirst
+                            : CrossFadeState.showSecond,
+                        duration: Duration(milliseconds: 700),
+                      ),
+                    ),
+                    Text('Like', style: TextStyle(fontWeight: FontWeight.bold)),
+                  ],
+                ),
                 Column(
                   children: [
                     CircularPercentIndicator(
@@ -136,15 +172,33 @@ class _DetailsPageState extends State<DetailsPage>
                     )
                   ],
                 ),
-                Column(
-                  children: [
-                    Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    ),
-                    Text('Like', style: TextStyle(fontWeight: FontWeight.bold)),
-                  ],
-                ),
+                // Column(
+                //   children: [
+                //     GestureDetector(
+                //       onTap: (){
+                //          alinprovider.chnager();
+                //       },
+                //       child: AnimatedCrossFade(
+                //         secondChild:Icon(
+                //           Icons.favorite,
+                //           color: Colors.black,
+                //            size: 25,
+                //         ) ,
+                //         firstChild:
+                //          Icon(
+                //           Icons.favorite,
+                //           color: Colors.red,
+                //           size: 30,
+                //         ),
+                //          crossFadeState: alinprovider.selected
+                //                     ? CrossFadeState.showFirst
+                //                     : CrossFadeState.showSecond,
+                //                 duration: Duration(milliseconds: 700),
+                //       ),
+                //     ),
+                //     Text('Like', style: TextStyle(fontWeight: FontWeight.bold)),
+                //   ],
+                // ),
 
                 //  AnimatedIcon(
                 //   icon: AnimatedIcons.play_pause,
@@ -156,9 +210,13 @@ class _DetailsPageState extends State<DetailsPage>
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
-              widget.movies.decription,
-              style: TextStyle(fontWeight: FontWeight.bold),
+            child: AnimatedOpacity(
+              opacity: alinprovider.opacity,
+              duration: Duration(seconds: 2),
+              child: Text(
+                widget.movies.decription,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ),
           Spacer(),
@@ -166,11 +224,15 @@ class _DetailsPageState extends State<DetailsPage>
             padding: const EdgeInsets.only(bottom: 40),
             child: GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MovieTicket()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MovieTicket(
+                                movies: widget.movies,
+                              )));
                 },
                 child: MovieButtion(
-                  text: 'Ticket Boocking ',
+                  text: ' Free Ticket  ',
                 )),
           )
         ],

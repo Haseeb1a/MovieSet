@@ -20,25 +20,25 @@ class HomepageController extends ChangeNotifier {
     reverse();
   }
 
-  setingMapToModel() {
-    movies = dataList
-        .map((data) => Movies(
-              title: data['title'],
-              image: data['image'],
-              index: data['index'],
-              rating:data['rating'],
-              decription: data['decription']
-            ))
-        .toList();
+    setingMapToModel() {
+      movies = dataList
+          .map((data) => Movies(
+                title: data['title'],
+                image: data['image'],
+                index: data['index'],
+                rating:data['rating'],
+                decription: data['decription']
+              ))
+          .toList();
 
-    pagecontrller =
-        PageController(viewportFraction: 0.8, initialPage: curnetIntex)
-          ..addListener(() {
-            pagevalue = pagecontrller.page!;
-            notifyListeners();
-          });
-    notifyListeners();
-  }
+      pagecontrller =
+          PageController(viewportFraction: 0.8, initialPage: curnetIntex)
+            ..addListener(() {
+              pagevalue = pagecontrller.page!;
+              notifyListeners();
+            });
+      notifyListeners();
+    }
 
   changer(int index) {
     curnetIntex = index;

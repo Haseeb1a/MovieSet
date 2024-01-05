@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieset/controller/details_controller.dart';
 import 'package:movieset/controller/home_controller.dart';
 import 'package:movieset/view/home_page.dart';
 import 'package:movieset/view/splace_screen/splace_screen.dart';
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => HomepageController())
+        ChangeNotifierProvider(create: (context) => HomepageController()),
+        ChangeNotifierProvider(create: (context) => DatailsController())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

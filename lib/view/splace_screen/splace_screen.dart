@@ -80,7 +80,7 @@ class _SplaceScreenState extends State<SplaceScreen> {
                 
                 color: Colors.white,
               ),
-              buttonText: 'swipe to continue',
+              buttonText: 'MOVE TO MOVIESET',
               buttontextstyle: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
             ),
           )
