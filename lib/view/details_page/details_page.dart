@@ -19,6 +19,10 @@ class DetailsPage extends StatefulWidget {
 
 class _DetailsPageState extends State<DetailsPage>
     with SingleTickerProviderStateMixin {
+  late AnimationController _controllers =
+      AnimationController(vsync: this, duration: Duration(seconds: 4))
+        ..repeat();
+  late Animation _animation;
   bool isPlay = false;
   late AnimationController _controller;
 
@@ -26,15 +30,16 @@ class _DetailsPageState extends State<DetailsPage>
   void initState() {
     _controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
+
     super.initState();
   }
 
   Widget build(BuildContext context) {
     final alinprovider = Provider.of<DatailsController>(context);
-     Provider.of<DatailsController>(context).opacitychange();
+    Provider.of<DatailsController>(context).opacitychange();
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           Stack(children: [
             Container(
@@ -104,8 +109,8 @@ class _DetailsPageState extends State<DetailsPage>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(widget.movies.title,
-                    style:
-                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 27)),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 27)),
                 Column(
                   children: [
                     GestureDetector(
@@ -132,7 +137,8 @@ class _DetailsPageState extends State<DetailsPage>
                         duration: const Duration(milliseconds: 700),
                       ),
                     ),
-                    const Text('Like', style: TextStyle(fontWeight: FontWeight.bold)),
+                    const Text('Like',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
                 Column(
@@ -181,21 +187,47 @@ class _DetailsPageState extends State<DetailsPage>
               ),
             ),
           ),
-          const Spacer(),
+          SizedBox(
+            height: 20,
+          ),
           Padding(
             padding: const EdgeInsets.only(bottom: 40),
-            child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MovieTicket(
-                                movies: widget.movies,
-                              )));
-                },
-                child: MovieButtion(
-                  text: ' Free Ticket  ',
-                )),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                AnimatedBuilder(
+                  animation: _controller,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white24,
+                    // backgroundColor: color,
+                    radius: 40,
+                    backgroundImage: NetworkImage(
+                        'https://static.vecteezy.com/system/resources/previews/024/107/920/original/top-view-popcorn-in-bowl-isolated-on-transparent-background-ai-generated-png.png'),
+                    // child: Image(
+                    //     image: NetworkImage(
+                    //         'https://static.vecteezy.com/system/resources/previews/024/107/920/original/top-view-popcorn-in-bowl-isolated-on-transparent-background-ai-generated-png.png',),fit:BoxFit.cover,),
+                  ),
+                  builder: (BuildContext context, Widget? child) {
+                    return Transform.rotate(
+                      angle: _controller.value * 2.0 * 3.14,
+                      child: child,
+                    );
+                  },
+                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MovieTicket(
+                                    movies: widget.movies,
+                                  )));
+                    },
+                    child: MovieButtion(
+                      text: ' Free Ticket  ',
+                    )),
+              ],
+            ),
           )
         ],
       ),

@@ -12,6 +12,7 @@ class MovieDetails extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15),
       child: Container(
+        // height: ,
         margin: const EdgeInsets.fromLTRB(0.0, 250, 0.0, 0.0),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(32)),
@@ -26,6 +27,7 @@ class MovieDetails extends StatelessWidget {
           ],
         ),
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
               padding: const EdgeInsets.all(32),
@@ -60,34 +62,36 @@ class MovieDetails extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
-                shadowColor: Colors.black,
-                elevation: 17
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 25),
+                child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  shadowColor: Colors.black,
+                  elevation: 17
+                ),
+                  
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailsPage(movies: movies)));
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      margin: EdgeInsets.symmetric(horizontal: 62.0),
+                      padding: EdgeInsets.symmetric(vertical: 18.0),
+                      decoration: BoxDecoration(
+                color: Colors.black, borderRadius: BorderRadius.circular(18)),
+                      alignment: Alignment.center,
+                      child: Text(
+                        'VIEW',
+                        style: TextStyle(
+                  fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                    )),
               ),
-                
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DetailsPage(movies: movies)));
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    margin: EdgeInsets.symmetric(horizontal: 62.0),
-                    padding: EdgeInsets.symmetric(vertical: 18.0),
-                    decoration: BoxDecoration(
-              color: Colors.black, borderRadius: BorderRadius.circular(18)),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'VIEW',
-                      style: TextStyle(
-                fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
-                  )),
             ),
           ],
         ),
