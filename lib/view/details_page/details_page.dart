@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movieset/controller/details_controller.dart';
+import 'package:movieset/helpers/appcolors.dart';
 import 'package:movieset/model/movie_model.dart';
 import 'package:movieset/view/ticket_page/ticket_page.dart';
 import 'package:movieset/widgets/movie_button.dart';
@@ -72,12 +73,12 @@ class _DetailsPageState extends State<DetailsPage>
                     },
                     child: CircleAvatar(
                       radius: 30,
-                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      backgroundColor: whitecolor,
                       child: AnimatedIcon(
                         icon: AnimatedIcons.play_pause,
                         progress: _controller,
                         size: 50,
-                        color: const Color.fromARGB(255, 0, 0, 0),
+                        color: blackcolor,
                       ),
                     ),
                   ),
@@ -94,7 +95,7 @@ class _DetailsPageState extends State<DetailsPage>
                     child: const trasparent_Button(
                         icons: Icon(
                       Icons.chevron_left_outlined,
-                      color: Colors.white,
+                      color: whitecolor,
                     )))),
           ]),
           Padding(
@@ -116,13 +117,13 @@ class _DetailsPageState extends State<DetailsPage>
                           padding: EdgeInsets.all(4.0),
                           child: Icon(
                             Icons.favorite,
-                            color: Colors.black,
+                            color: blackcolor,
                             size: 32,
                           ),
                         ),
                         firstChild: const Icon(
                           Icons.favorite,
-                          color: Colors.red,
+                          color: redcolor,
                           size: 37,
                         ),
                         crossFadeState: alinprovider.selected

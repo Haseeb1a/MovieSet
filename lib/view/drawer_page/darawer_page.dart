@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:movieset/controller/locaization.dart';
+import 'package:movieset/helpers/appcolors.dart';
 import 'package:movieset/view/home_page/home_page.dart';
+import 'package:provider/provider.dart';
 
 class MyHomepage extends StatelessWidget {
   const MyHomepage({super.key});
@@ -12,8 +15,8 @@ class MyHomepage extends StatelessWidget {
       menuScreen: MenuScreenPage(),
       borderRadius: 24.0,
       showShadow: true,
-      drawerShadowsBackgroundColor: Colors.black12,
-      menuBackgroundColor: Color.fromARGB(255, 255, 255, 255),
+      drawerShadowsBackgroundColor: blackcolor,
+      menuBackgroundColor: whitecolor,
     );
   }
 }
@@ -23,7 +26,8 @@ class MenuScreenPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    final localizationprovider = Provider.of<LocilizationController>(context);
+    return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -32,12 +36,12 @@ class MenuScreenPage extends StatelessWidget {
                 backgroundColor: Color.fromARGB(18, 0, 0, 0),
                 child: Icon(
                   Icons.home,
-                  color: Colors.black,
+                  color: blackcolor,
                 )),
             title: Text(
               'home',
               style: TextStyle(
-                  color: Color.fromARGB(255, 0, 0, 0),
+                  color:blackcolor,
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -47,53 +51,58 @@ class MenuScreenPage extends StatelessWidget {
                   backgroundColor: Color.fromARGB(18, 0, 0, 0),
                   child: Icon(
                     Icons.language,
-                    color: Colors.black,
+                    color: blackcolor,
                   )),
               title: const Text(
                 'language',
                 style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
+                    color: blackcolor,
                     fontWeight: FontWeight.bold),
               ),
               children: [
-                GestureDetector(
-                  onTap: (){},
-                  child: const ListTile(
-
-                    //  leading:  Icon(Icons.language,color: Colors.black,),
-                    title: Text(
+                ListTile(
+                  //  leading:  Icon(Icons.language,color: Colors.black,),
+                  title: GestureDetector(
+      onTap: () {
+                    localizationprovider.setLanguage(const Locale('hi'));
+                  },
+                    child: Text(
                       'Hindi',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
+                          color: blackcolor,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                     localizationprovider.setLanguage(const Locale('en'));
+                  },
+                  child:  const ListTile(
+                    //  leading:  Icon(Icons.language,color: Colors.black,),
+                    title: Text(
+                      'English',
+                      style: TextStyle(
+                          color: blackcolor,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
                 GestureDetector(
                   onTap: (){
-
+                     localizationprovider.setLanguage(const Locale('ar'));
                   },
                   child: const ListTile(
                     //  leading:  Icon(Icons.language,color: Colors.black,),
                     title: Text(
-                      'English',
+                      'Arabic',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
+                          color: blackcolor,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                ),
-                const ListTile(
-                  //  leading:  Icon(Icons.language,color: Colors.black,),
-                  title: Text(
-                    'Arabic',
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        fontWeight: FontWeight.bold),
-                  ),
                 )
               ]),
-
         ],
       ),
     );

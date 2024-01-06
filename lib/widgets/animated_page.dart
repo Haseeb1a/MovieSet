@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 typedef ChildBuilder = Widget Function(int Index, BuildContext context);
 
+
 typedef OnpageChnageCallback = void Function(int index);
 
 class AnimationPages extends StatelessWidget {

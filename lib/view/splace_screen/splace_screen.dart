@@ -3,6 +3,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:lottie/lottie.dart';
 import 'package:movieset/controller/splace_controllers.dart';
+import 'package:movieset/helpers/appcolors.dart';
 import 'package:movieset/view/drawer_page/darawer_page.dart';
 import 'package:movieset/view/home_page/home_page.dart';
 import 'package:page_transition/page_transition.dart';
@@ -13,28 +14,23 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SplaceScreen extends StatelessWidget {
    SplaceScreen({super.key});
 
-  bool isFinished = false;
 
   @override
   Widget build(BuildContext context) {
     final splaceprovider = Provider.of<SplaceController>(context);
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: blackcolor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            AppLocalizations.of(context)!.batmantitle,
-            style: TextStyle(color: Colors.white),
-          ),
           ClipPath(
             clipper: WaveClipperTwo(),
             child: Center(
               child: Container(
                 height: 250,
                 width: double.infinity,
-                color: Color.fromARGB(255, 255, 0, 0),
+                color:redcolor,
               ),
             ),
           ),
@@ -52,9 +48,9 @@ class SplaceScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: SwipeableButtonView(
-              isFinished: isFinished,
-              onFinish: () async {
-                await Navigator.push(
+              isFinished:splaceprovider.isFinished,
+              onFinish: ()  {
+                 Navigator.push(
                     context,
                     PageTransition(
                         type: PageTransitionType.fade, child: MyHomepage()));
@@ -63,15 +59,15 @@ class SplaceScreen extends StatelessWidget {
               onWaitingProcess: () {
                 splaceprovider.onWaitingProcess();
               },
-              buttonColor: const Color.fromARGB(255, 255, 17, 0),
-              activeColor: Color.fromARGB(255, 255, 255, 255),
+              buttonColor: redcolor,
+              activeColor: whitecolor,
               buttonWidget: Icon(
                 Icons.arrow_forward_ios_rounded,
-                color: Colors.white,
+                color: whitecolor,
               ),
               buttonText: 'MOVE TO MOVIESET',
               buttontextstyle:
-                  TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
+                  TextStyle(fontSize: 20, color:blackcolor),
             ),
           )
         ],

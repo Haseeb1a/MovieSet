@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:intl/intl.dart';
+import 'package:movieset/helpers/appcolors.dart';
 import 'package:movieset/model/movie_model.dart';
-import 'package:movieset/view/ticket_page/ticket_card.dart';
+import 'package:movieset/view/ticket_page/widget/ticket_cards.dart';
 import 'package:movieset/widgets/trasperent_icons.dart';
+
+// 'ticket_cards.dart'rt';
 import 'package:ticket_widget/ticket_widget.dart';
 class MovieTicket extends StatelessWidget {
   final Movies movies;
@@ -12,7 +13,7 @@ class MovieTicket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: blackcolor,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -29,7 +30,7 @@ class MovieTicket extends StatelessWidget {
                       child: trasparent_Button(
                           icons: Icon(
                         Icons.chevron_left,
-                        color: Colors.white,
+                        color: whitecolor,
                       ))),
                 ),
               ],
@@ -42,7 +43,7 @@ class MovieTicket extends StatelessWidget {
                 poster: movies.image,
                 moviename: movies.title,
               ),
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: whitecolor,
             )),
             SizedBox(
               height: 70,
@@ -50,7 +51,7 @@ class MovieTicket extends StatelessWidget {
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.yellow,
-                      shadowColor: Colors.white),
+                      shadowColor: whitecolor),
                   onPressed: () {},
                   child: Text(
                     'Share',
@@ -66,80 +67,3 @@ class MovieTicket extends StatelessWidget {
     );
   }
 }
-
-// class TicketCard extends StatelessWidget {
-//   final String poster;
-//   final String moviename;
-//   const TicketCard({super.key, required this.poster, required this.moviename});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     DateTime now = DateTime.now();
-//     String formattedDate = DateFormat('yyyy-MM-dd').format(now);
-
-//     return Column(
-//       children: [
-//         Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//           children: [
-//             Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   'Movie',
-//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-//                 ),
-//                 Text(moviename,
-//                     style:
-//                         TextStyle(fontWeight: FontWeight.w500, fontSize: 20)),
-//                 SizedBox(
-//                   height: 20,
-//                 ),
-//                 Text('Date',
-//                     style:
-//                         TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-//                 Text(
-//                   formattedDate,
-//                   style: TextStyle(fontSize: 18),
-//                 ),
-//               ],
-//             ),
-//             Hero(
-//                  tag: 'movedata',
-//               child: ClipPath(
-//                 clipper: OvalBottomBorderClipper(),
-//                 child: Image.asset(
-//                   poster,
-//                   fit: BoxFit.cover,
-//                   width: 150,
-//                   height: 170,
-//                 ),
-//               ),
-//             )
-//             // )
-//           ],
-//         ),
-//         Text('Time',
-//             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-//         Text('10:00 PM', style: TextStyle(fontSize: 17)),
-//         Text('------------------------',
-//             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
-//         TweenAnimationBuilder(
-//           curve: Curves.easeInOutBack,
-//           tween: Tween<double>(begin: 100, end: 200),
-//           duration: Duration(seconds: 2),
-//           builder: (context, value, child) {
-//             return SizedBox(
-//               height: value,
-//               width: value,
-//               child: Image.asset(
-//                 'assets/QR.png',
-//                 fit: BoxFit.cover,
-//               ),
-//             );
-//           },
-//         )
-//       ],
-//     );
-//   }
-// }

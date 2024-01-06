@@ -58,7 +58,7 @@ class MovieDetails extends StatelessWidget {
                       )),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),

@@ -1,3 +1,5 @@
+// import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:movieset/helpers/image_list.dart';
 import 'package:movieset/model/movie_model.dart';
@@ -8,6 +10,7 @@ class HomepageController extends ChangeNotifier {
   int curnetIntex = 0;
   double pagevalue = 0.0;
   List aaa = [];
+  // Serivces serivces=Serivces();
 
   List<void> reverse() {
     aaa = movies.reversed.toList();
@@ -16,12 +19,12 @@ class HomepageController extends ChangeNotifier {
   }
 
   HomepageController() {
-    setingMapToModel();
+    // setingMapToModel();
     reverse();
   }
 
-    setingMapToModel() {
-      movies = dataList
+    setingMapToModel(context) {
+      movies =Serivces(context).dataList
           .map((data) => Movies(
                 title: data['title'],
                 image: data['image'],

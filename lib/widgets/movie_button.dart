@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieset/helpers/appcolors.dart';
 import 'package:movieset/view/details_page/details_page.dart';
 
 class MovieButtion extends StatelessWidget {
@@ -12,7 +13,7 @@ class MovieButtion extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 62.0),
       padding: EdgeInsets.symmetric(vertical: 18.0),
       decoration: BoxDecoration(
-          color: Colors.black, borderRadius: BorderRadius.circular(18)),
+          color: blackcolor, borderRadius: BorderRadius.circular(18)),
       alignment: Alignment.center,
       child: Text(
         text,

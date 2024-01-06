@@ -18,14 +18,11 @@ class ImageSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipPath(
         clipper: ImageClipper(progress: getProgress()),
-        child: Hero(
-          tag: 'movieposter',
-          child: Image.asset(
-            image,
-            height: double.infinity,
-            fit: BoxFit.cover,
-          
-          ),
+        child: Image.asset(
+          image,
+          height: double.infinity,
+          fit: BoxFit.cover,
+        
         ));
   }
 

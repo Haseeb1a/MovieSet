@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final homeProviders = Provider.of<HomepageController>(context);
+    homeProviders.setingMapToModel(context);
     final reveselist = homeProviders.movies.reversed.toList();
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
@@ -29,13 +30,14 @@ class HomePage extends StatelessWidget {
                       pagevalue: homeProviders.pagevalue))
                   .toList(),
             ),
+            // container on the with smoke e
             Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.centerRight,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Colors.transparent,
+                      Color.fromARGB(0, 255, 255, 255),
                       Color.fromARGB(255, 255, 255, 255)
                     ],
                     stops: [
@@ -70,8 +72,8 @@ class HomePage extends StatelessWidget {
               top: 30,
               left: 30,
               child: GestureDetector(
-                onTap: (){
-                   ZoomDrawer.of(context)!.toggle();
+                onTap: () {
+                  ZoomDrawer.of(context)!.toggle();
                 },
                 child: const trasparent_Button(
                   icons: Icon(
@@ -81,8 +83,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-          ])
-          ),
+          ])),
     );
   }
 }
