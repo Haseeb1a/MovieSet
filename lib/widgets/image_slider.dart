@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movieset/view/image_cliper.dart';
+import 'package:movieset/view/home_page/widgets/image_cliper.dart';
 
 class ImageSlider extends StatelessWidget {
   //  Animation double=;

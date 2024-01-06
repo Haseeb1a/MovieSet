@@ -1,41 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:movieset/model/movie_model.dart';
 import 'package:movieset/view/details_page/details_page.dart';
 import 'package:movieset/widgets/animated_page.dart';
 import 'package:movieset/widgets/image_slider.dart';
-import 'package:movieset/widgets/movie_button.dart';
 import 'package:movieset/widgets/trasperent_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:movieset/controller/home_controller.dart';
-import 'package:movieset/view/move_datails_card.dart';
+import 'package:movieset/view/home_page/widgets/move_datails_card.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final homeProviders = Provider.of<HomepageController>(context);
     final reveselist = homeProviders.movies.reversed.toList();
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
+      value: const SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
       child: Scaffold(
-          // appBar: AppBar(
-          //   leading: IconButton(
-          //     onPressed: () {
-          //       ZoomDrawer.of(context)!.toggle();
-          //     },
-          //     icon: Icon(Icons.menu,color: Colors.white,),
-          //   ),
-          //   toolbarHeight: 30,
-          //   backgroundColor: Colors.black,
-          // ),
           backgroundColor: Colors.black,
           body: Stack(children: [
             Stack(
@@ -47,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                   .toList(),
             ),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.centerRight,
                     end: Alignment.bottomCenter,
@@ -83,7 +66,6 @@ class _HomePageState extends State<HomePage> {
                 homeProviders.changer(index);
               },
             ),
-            // Positioned(bottom: 32, left: 0, right: 0, child: MovieButtion()),
             Positioned(
               top: 30,
               left: 30,
@@ -91,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: (){
                    ZoomDrawer.of(context)!.toggle();
                 },
-                child: trasparent_Button(
+                child: const trasparent_Button(
                   icons: Icon(
                     Icons.settings,
                     color: Colors.white,
@@ -100,18 +82,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ])
-
-          //  PageView.builder(
-          //   controller: homeProviders.pagecontrller,
-          //   itemCount: homeProviders.movies.length,
-
-          //   itemBuilder: (context, index) {
-
-          // return    MovieDetails(
-          //       movies: homeProviders.movies[index],
-          //     );
-          //   },
-          // ),
           ),
     );
   }

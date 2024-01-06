@@ -1,0 +1,42 @@
+{
+  "texttitle": "Happy Vacations",
+  "@texttitle": {
+    "description": "Happy Vacations"
+  },
+  "goodboystitle": "GOOD BOYS",
+  "@goodboystitle": {
+    "description": "GOOD BOYS"
+  },
+  "goodboydetails": "Good Boys is a 2019 American coming-of-age comedy film directed by Gene Stupnitsky, in his directorial debut, and written by Stupnitsky and Lee Eisenberg.[4][5] It stars Jacob Tremblay, Keith L. Williams, and Brady Noon. The film follows three naive sixth graders who ditch school to replace a broken drone and prep for their kisses after being invited to a major party — but things go epically awry. Seth Rogen and Evan Goldberg produced the film through their Point Grey Pictures company.",
+  "@goodboydetails": {
+    "description": "Good Boys is a 2019 American coming-of-age comedy film directed by Gene Stupnitsky, in his directorial debut, and written by Stupnitsky and Lee Eisenberg.[4][5] It stars Jacob Tremblay, Keith L. Williams, and Brady Noon. The film follows three naive sixth graders who ditch school to replace a broken drone and prep for their kisses after being invited to a major party — but things go epically awry. Seth Rogen and Evan Goldberg produced the film through their Point Grey Pictures company."
+  },
+
+  "jockertitle": "JOCKER",
+  "@jockertitle": {
+    "description": "JOCKER"
+  },
+  "jockerdetails": "Joker is a 2019 American psychological thriller film directed by Todd Phillips, who also co-wrote the screenplay with Scott Silver. The film, based on DC Comics characters, stars Joaquin Phoenix as Joker. Set in 1981, it follows Arthur Fleck, a failed clown and aspiring stand-up comic whose descent into mental illness and nihilism inspires a violent countercultural revolution against the wealthy in a decaying Gotham City. Robert De Niro, Zazie Beetz, and Frances Conroy appear in supporting roles. Distributed by Warner Bros. Pictures, Joker was produced by Warner Bros. Pictures and DC Films in association with Village Roadshow Pictures, Bron Creative, and Joint Effort.",
+  "@jockerdetails": {
+    "description": "Joker is a 2019 American psychological thriller film directed by Todd Phillips, who also co-wrote the screenplay with Scott Silver. The film, based on DC Comics characters, stars Joaquin Phoenix as Joker. Set in 1981, it follows Arthur Fleck, a failed clown and aspiring stand-up comic whose descent into mental illness and nihilism inspires a violent countercultural revolution against the wealthy in a decaying Gotham City. Robert De Niro, Zazie Beetz, and Frances Conroy appear in supporting roles. Distributed by Warner Bros. Pictures, Joker was produced by Warner Bros. Pictures and DC Films in association with Village Roadshow Pictures, Bron Creative, and Joint Effort"
+  },
+
+  "batmantitle": "BATMAN",
+  "@batmantitle": {
+    "description": "BATMAN"
+  },
+  "batmandetails": "The Batman is a 2022 American superhero film based on the DC Comics character Batman. Produced by Warner Bros. Pictures, DC Films, 6th & Idaho, and Dylan Clark Productions, and distributed by Warner Bros. Pictures, it is a reboot of the Batman film franchise. The film was directed by Matt Reeves, who wrote the screenplay with Peter Craig. It stars Robert Pattinson as Bruce Wayne / Batman alongside Zoë Kravitz, Paul Dano, Jeffrey Wright, John Turturro, Peter Sarsgaard, Andy Serkis, and Colin Farrell. The film sees Batman, who has been fighting crime in Gotham City for two years, uncover corruption while pursuing the Riddler (Dano), a serial killer who targets Gotham's corrupt elite.",
+  "@batmandetails": {
+    "description": "The Batman is a 2022 American superhero film based on the DC Comics character Batman. Produced by Warner Bros. Pictures, DC Films, 6th & Idaho, and Dylan Clark Productions, and distributed by Warner Bros. Pictures, it is a reboot of the Batman film franchise. The film was directed by Matt Reeves, who wrote the screenplay with Peter Craig. It stars Robert Pattinson as Bruce Wayne / Batman alongside Zoë Kravitz, Paul Dano, Jeffrey Wright, John Turturro, Peter Sarsgaard, Andy Serkis, and Colin Farrell. The film sees Batman, who has been fighting crime in Gotham City for two years, uncover corruption while pursuing the Riddler (Dano), a serial killer who targets Gotham's corrupt elite."
+  },
+
+
+  "lionkingtitle": "LION KING",
+  "@lionkingtitle": {
+    "description": "LION KING"
+  },
+  "lionkingdetails": "The Lion King is a 2019 American musical drama film directed by Jon Favreau, written by Jeff Nathanson, and produced by Walt Disney Pictures and Fairview Entertainment. It is a photorealistic computer-animated remake of Disney's traditionally animated 1994 film of the same name. The film stars the voices of Donald Glover, Seth Rogen, Chiwetel Ejiofor, Alfre Woodard, Billy Eichner, John Kani, John Oliver, Florence Kasumba, Eric André, Keegan-Michael Key, JD McCrary, Shahadi Wright Joseph, with Beyoncé Knowles-Carter, and James Earl Jones (reprising his voice role). The plot follows Simba, a young lion who must embrace his role as the rightful king of his homeland following the murder of his father, Mufasa, at the hands of his uncle, Scar.",
+  "@lionkingdetails": {
+    "description": "The Lion King is a 2019 American musical drama film directed by Jon Favreau, written by Jeff Nathanson, and produced by Walt Disney Pictures and Fairview Entertainment. It is a photorealistic computer-animated remake of Disney's traditionally animated 1994 film of the same name. The film stars the voices of Donald Glover, Seth Rogen, Chiwetel Ejiofor, Alfre Woodard, Billy Eichner, John Kani, John Oliver, Florence Kasumba, Eric André, Keegan-Michael Key, JD McCrary, Shahadi Wright Joseph, with Beyoncé Knowles-Carter, and James Earl Jones (reprising his voice role). The plot follows Simba, a young lion who must embrace his role as the rightful king of his homeland following the murder of his father, Mufasa, at the hands of his uncle, Scar."
+  }
+}

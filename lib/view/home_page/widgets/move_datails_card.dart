@@ -89,14 +89,6 @@ class MovieDetails extends StatelessWidget {
                     ),
                   )),
             ),
-            // InkWell(
-            //     onTap: () {
-            //       Navigator.push(
-            //           context,
-            //           MaterialPageRoute(
-            //               builder: (context) => DetailsPage(movies: movies)));
-            //     },
-            //     child: const MovieButtion())
           ],
         ),
       ),

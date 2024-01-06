@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DatailsController extends ChangeNotifier {
+    // DateTime now = DateTime.now();
+    // String formattedDate = DateFormat('yyyy-MM-dd').format(now);
   bool selected = true;
   double opacity = 0.1;
 
@@ -20,4 +23,5 @@ class DatailsController extends ChangeNotifier {
       notifyListeners();
     // });
   }
+
 }
