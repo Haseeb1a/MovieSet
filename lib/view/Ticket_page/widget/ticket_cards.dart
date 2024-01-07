@@ -57,7 +57,20 @@ class TicketCard extends StatelessWidget {
         ),
         Text('Time',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-        Text('10:00 PM', style: TextStyle(fontSize: 17)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Hero(
+              tag: 'popcorn',
+              child: CircleAvatar( 
+                radius: 15,
+                
+                 backgroundImage: AssetImage(
+                        'assets/popcorn_second.jpg'),),
+            ),
+            Text('10:00 PM', style: TextStyle(fontSize: 17)),
+          ],
+        ),
         Text('------------------------',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
         TweenAnimationBuilder(

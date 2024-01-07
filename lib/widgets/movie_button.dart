@@ -10,7 +10,7 @@ class MovieButtion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 62.0),
+      // margin: EdgeInsets.symmetric(horizontal: 62.0),
       padding: EdgeInsets.symmetric(vertical: 18.0),
       decoration: BoxDecoration(
           color: blackcolor, borderRadius: BorderRadius.circular(18)),

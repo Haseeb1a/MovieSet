@@ -19,10 +19,6 @@ class DetailsPage extends StatefulWidget {
 
 class _DetailsPageState extends State<DetailsPage>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controllers =
-      AnimationController(vsync: this, duration: Duration(seconds: 4))
-        ..repeat();
-  late Animation _animation;
   bool isPlay = false;
   late AnimationController _controller;
 
@@ -190,31 +186,34 @@ class _DetailsPageState extends State<DetailsPage>
           SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 40),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                AnimatedBuilder(
-                  animation: _controller,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(padding: EdgeInsets.all(10)),
+              AnimatedBuilder(
+                animation: _controller,
+                child: Hero(
+                  tag: "popcorn",
                   child: CircleAvatar(
                     backgroundColor: Colors.white24,
                     // backgroundColor: color,
                     radius: 40,
-                    backgroundImage: NetworkImage(
-                        'https://static.vecteezy.com/system/resources/previews/024/107/920/original/top-view-popcorn-in-bowl-isolated-on-transparent-background-ai-generated-png.png'),
+                    backgroundImage: AssetImage(
+                        'assets/popcorn_circule.png'),
                     // child: Image(
                     //     image: NetworkImage(
                     //         'https://static.vecteezy.com/system/resources/previews/024/107/920/original/top-view-popcorn-in-bowl-isolated-on-transparent-background-ai-generated-png.png',),fit:BoxFit.cover,),
                   ),
-                  builder: (BuildContext context, Widget? child) {
-                    return Transform.rotate(
-                      angle: _controller.value * 2.0 * 3.14,
-                      child: child,
-                    );
-                  },
                 ),
-                GestureDetector(
+                builder: (BuildContext context, Widget? child) {
+                  return Transform.rotate(
+                    angle: _controller.value * 2.0 * 3.14,
+                    child: child,
+                  );
+                },
+              ),
+              Expanded(
+                child: GestureDetector(
                     onTap: () {
                       Navigator.push(
                           context,
@@ -223,11 +222,14 @@ class _DetailsPageState extends State<DetailsPage>
                                     movies: widget.movies,
                                   )));
                     },
-                    child: MovieButtion(
-                      text: ' Free Ticket  ',
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: MovieButtion(
+                        text: ' Free Ticket  ',
+                      ),
                     )),
-              ],
-            ),
+              ),
+            ],
           )
         ],
       ),
